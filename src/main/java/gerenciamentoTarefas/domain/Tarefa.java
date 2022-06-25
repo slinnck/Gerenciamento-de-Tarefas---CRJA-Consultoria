@@ -1,14 +1,13 @@
 package gerenciamentoTarefas.domain;
 
 import java.io.Serializable;
-import java.util.List;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import gerenciamentoTarefas.dto.TarefaDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,17 +15,22 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
-public class Pessoa implements Serializable {
+public class Tarefa implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private String nome;
+	private String titulo;
+	private String descricao;
+	private LocalDate prazo;
 	private String departamento;
-	private List<TarefaDTO> tarefas;
+	private Integer duracao;
+	private Boolean pessoaAlocada;
+	private Boolean finalizado;
+
 
 }

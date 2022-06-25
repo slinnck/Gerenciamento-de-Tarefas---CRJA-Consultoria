@@ -9,5 +9,6 @@ public class PessoaDTO implements Serializable {
 	private Integer id;
 	private String nome;
 	private String departamento;
+	private List<TarefaDTO> tarefas;
 
 }
