@@ -2,8 +2,8 @@ package gerenciamentoTarefas.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import gerenciamentoTarefas.dto.TarefaDTO;
+import gerenciamentoTarefas.domain.Pessoa;
 
-public interface TarefaRepository extends JpaRepository<TarefaDTO, Integer> {
+public interface TarefaRepository extends JpaRepository<Pessoa, Long> {
 
 }
