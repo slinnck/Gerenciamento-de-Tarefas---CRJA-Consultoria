@@ -34,6 +34,7 @@ public class TarefaServiceImpl implements TarefaService {
         tarefa.setTitulo(tarefaDTO.getTitulo());
         tarefa.setDuracao(tarefaDTO.getDuracao());
         tarefa.setDescricao(tarefaDTO.getDescricao());
+        tarefa.setDepartamento(tarefaDTO.getDescricaoDepartamento());
         tarefa.setFinalizado(tarefaDTO.getFinalizado());
         return tarefa;
     }

@@ -4,14 +4,16 @@ import gerenciamentoTarefas.domain.enums.RegistroDeDepartamento;
 import gerenciamentoTarefas.dto.DepartamentoDTO;
 import gerenciamentoTarefas.repository.PessoaRepository;
 import gerenciamentoTarefas.repository.TarefaRepository;
-import gerenciamentoTarefas.services.DepartamentoService;
+import gerenciamentoTarefas.services.DepartamentosService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class DepartamentosServiceImpl implements DepartamentoService {
+@Service
+public class DepartamentosServiceImpl implements DepartamentosService {
 
     @Autowired
     PessoaRepository pessoaRepository;
