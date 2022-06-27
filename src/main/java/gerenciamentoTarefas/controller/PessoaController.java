@@ -1,5 +1,7 @@
 package gerenciamentoTarefas.controller;
 
+import gerenciamentoTarefas.dto.TarefaDTO;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import gerenciamentoTarefas.dto.PessoaDTO;
 import gerenciamentoTarefas.services.PessoaService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value= "/pessoa")
@@ -31,6 +35,16 @@ public class PessoaController {
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<String> deletarPessoa(@PathVariable Integer id) {
 		return ResponseEntity.ok(pessoaService.deletarPessoa(id));
+	}
+
+	@RequestMapping(method = RequestMethod.GET)
+	public ResponseEntity<List<PessoaDTO>> buscarListaPessoas() {
+		return ResponseEntity.ok(pessoaService.listPessoas());
+	}
+
+	@RequestMapping(value = "/gastos", method = RequestMethod.GET)
+	public ResponseEntity<List<PessoaDTO>> buscarPessoaPorPeriodo() {
+		return ResponseEntity.ok(pessoaService.buscarPessoaPorPeriodo());
 	}
 	
 

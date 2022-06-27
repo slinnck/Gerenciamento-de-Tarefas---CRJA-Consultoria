@@ -1,5 +1,8 @@
 package gerenciamentoTarefas.domain.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum RegistroDeDepartamento {
 	
 	FINANCEIRO(1, "Financeiro"),
@@ -12,14 +15,6 @@ public enum RegistroDeDepartamento {
 	private RegistroDeDepartamento(int cod, String descricao) {
 		this.cod = cod;
 		this.descricao = descricao;
-	}
-	
-	public int getCod() {
-		return cod;
-	}
-	
-	public String getDescricao() {
-		return descricao;
 	}
 	
 	public static RegistroDeDepartamento toEnum(Integer cod) {
